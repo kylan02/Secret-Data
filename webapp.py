@@ -79,7 +79,7 @@ def renderPage1():
 @app.route('/page2')
 def renderPage2():
     if 'user_data' in session:
-        if session['user_data']['public_repos'] > 10:
+        if session['user_data']['public_repos'] > 30:
             return render_template('page2.html', secretMessage = "You have more than 10 public repos.")
     else:
         return render_template('page2.html')
