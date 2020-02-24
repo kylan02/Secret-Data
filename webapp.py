@@ -79,7 +79,8 @@ def renderPage1():
 @app.route('/page2')
 def renderPage2():
     if 'user_data' in session:
-        return render_template('page2.html', publicRepos = session['user_data']['public_repos'])
+        if session['user_data']['public_repos'] > 10:
+            return render_template('page2.html', publicRepos = session['user_data']['public_repos'])
     else:
         return render_template('page2.html')
 
