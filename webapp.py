@@ -84,8 +84,8 @@ def renderPage1():
             if code.equals("1X6LAC845"):
                 return render_template('pound-kg.html', responseFromServer= "You Win!")
             else: return render_template('pound-kg.html', responseFromServer= "Code not found... try again.")
-	else:
-		return render_template('pound-kg.html')
+     else:
+	return render_template('pound-kg.html')
 
 @app.route('/page2')
 def renderPage2():
