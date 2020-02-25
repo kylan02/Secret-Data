@@ -3,9 +3,18 @@
 {% block title %}page1{% endblock %}
 
 {% block content %}
-  <h1>This is Page 1</h1>
+  <h1>{{ title }}</h1>
 
-<p>Lorem ipsum sit dolor amet.</p>
+<h1>Input Secret Code:</h1>
+	
+	<form action='/page1'>
+      Input:<br>
+      <input type="text" name="code">
+      <br><br>
+      <input type="submit">
+    </form>
+	<h2>Answer:</h2>
+	<h2>{{ responseFromServer }}</h2>
 
 <pre>
 {{ dump_user_data }}
