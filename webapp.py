@@ -80,7 +80,7 @@ def renderPage1():
 def renderPage2():
     if 'user_data' in session:
         if session['user_data']['public_repos'] > 10:
-            return render_template('page2.html', secretMessage = "You have more than 10 public repos. The secret code is: 1X6LAC845", title = "Secret Code:")
+            return render_template('page2.html', secretMessage = "The secret code is: 1X6LAC845", title = "Secret Code:")
         else: return render_template('page2.html', secretMessage = "You have less than 10 public repos, you can not view the secret code.", title = "Unauthorized:")
     else:
         return render_template('page2.html', title = "Please Log In")
