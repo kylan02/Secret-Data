@@ -81,7 +81,7 @@ def renderPage1():
         if code.length() != 9:
                 return render_template('pound-kg.html', responseFromServer= "Please input a code that is 9 characters long and try again.")
         else: 
-            if code.equals("1X6LAC845"):
+            if code == "1X6LAC845":
                 return render_template('pound-kg.html', responseFromServer= "You Win!")
             else: return render_template('pound-kg.html', responseFromServer= "Code not found... try again.")
     else:
