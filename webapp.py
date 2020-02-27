@@ -74,16 +74,15 @@ def renderPage1():
         user_data_pprint = pprint.pformat(session['user_data'])#format the user data nicely
     else:
         user_data_pprint = '';
-    return render_template('page1.html',dump_user_data=user_data_pprint)
 
     if "code" in request.form:
         code = request.form["code"]
         if code.length() != 9:
-                return render_template('page1.html', responseFromServer= "Please input a code that is 9 characters long and try again.")
+                return render_template('page1.html', responseFromServer= "Please input a code that is 9 characters long and try again.",dump_user_data=user_data_pprint)
         else: 
             if code == "1X6LAC845":
-                return render_template('page1.html', responseFromServer= "You Win!")
-            else: return render_template('page1.html', responseFromServer= "Code not found... try again.")
+                return render_template('page1.html', responseFromServer= "You Win!",dump_user_data=user_data_pprint)
+            else: return render_template('page1.html', responseFromServer= "Code not found... try again.",dump_user_data=user_data_pprint)
     else:
         return render_template('page1.html')
 
