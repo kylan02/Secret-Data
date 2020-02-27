@@ -77,7 +77,7 @@ def renderPage1():
 
     if "code" in request.form:
         code = request.form["code"]
-        if code.length() != 9:
+        if len(code) != 9:
                 return render_template('page1.html', responseFromServer= "Please input a code that is 9 characters long and try again.",dump_user_data=user_data_pprint)
         else: 
             if code == "1X6LAC845":
