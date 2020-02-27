@@ -77,15 +77,15 @@ def renderPage1():
     return render_template('page1.html',dump_user_data=user_data_pprint)
 
     if "code" in request.args:
-	code = request.args['code']
-	if code.length() != 9:
-		return render_template('pound-kg.html', responseFromServer= "Please input a code that is 9 characters long and try again.")
+        code = request.args["code"]
+        if code.length() != 9:
+                return render_template('pound-kg.html', responseFromServer= "Please input a code that is 9 characters long and try again.")
         else: 
             if code.equals("1X6LAC845"):
                 return render_template('pound-kg.html', responseFromServer= "You Win!")
             else: return render_template('pound-kg.html', responseFromServer= "Code not found... try again.")
      else:
-	return render_template('pound-kg.html')
+        return render_template('pound-kg.html')
 
 @app.route('/page2')
 def renderPage2():
